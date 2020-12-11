@@ -8,8 +8,7 @@ class BrewUp < Formula
   bottle :unneeded
 
   def install
-    bin.install "brew-up.sh"
-    bin.install_symlink "brew-up.sh" => "brew-up"
+    bin.install "brew-up.sh" => "brew-up"
   end
 
   test do
