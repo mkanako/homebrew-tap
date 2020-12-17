@@ -3,18 +3,18 @@
 # set -o errexit
 set -o pipefail
 
-formula_names=(
-    "mkanako/brew-up"
-    "IrineSistiana/mosdns"
-    "ameshkov/dnslookup"
-)
+formula_names=()
+
+for file in $(ls *.rb); do
+    repos=$(cat $file | ack 'homepage\s+"https://github.com/(.+/.+)"' --output "\$1" -)
+    if [ ! -z "$repos" ]; then
+        formula_names=("${formula_names[@]}" "$repos")
+    fi
+done
 
 for formula_name in ${formula_names[@]}; do
     echo $formula_name
     formula_file="${formula_name##*/}.rb"
-    if [ ! -e $formula_file ]; then
-        continue
-    fi
     tag=$(curl -s -f https://api.github.com/repos/"$formula_name"/releases/latest | grep "tag_name" | cut -d '"' -f 4)
     if [ -z "$tag" ]; then
         echo "'tag_name' not found"
@@ -28,7 +28,7 @@ for formula_name in ${formula_names[@]}; do
     fi
     echo "current verison: ${verison}"
     if [ $verison != $tag ]; then
-        url=$(ack 'url\s+"(http.*)"' $formula_file --output "\$1")
+        url=$(cat $formula_file | ack 'url\s+"(http.*)"' --output "\$1" -)
         if [ -z "$url" ]; then
             echo "url not found"
             exit
