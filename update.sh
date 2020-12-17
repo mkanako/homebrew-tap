@@ -33,8 +33,8 @@ for formula_name in ${formula_names[@]}; do
             echo "url not found"
             exit
         fi
-        new_url=${url/${verison}/${tag}}
-        hash=$(curl -L -f -s "$new_url" | shasum -a 256)
+        new_url=${url//${verison}/${tag}}
+        hash=$(curl -L -f --progress-bar "$new_url" | shasum -a 256)
         if [[ $? -eq 0 && ! -z "$hash" && ${#hash} -gt 64 ]]; then
             hash=${hash%% *}
             sed -i "" "s#${verison}#${tag}#g" $formula_file
