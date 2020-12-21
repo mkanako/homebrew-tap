@@ -40,7 +40,7 @@ for formula_name in ${formula_names[@]}; do
             sed -i "" "s#${verison}#${tag}#g" $formula_file
             sed -i "" -e "s#\(sha256[[:blank:]]*\"\)[[:alnum:]]\{64\}#\1$hash#g" $formula_file
             if [[ ! -z $RUN_ENV && $RUN_ENV == 'github' ]]; then
-                git commit $formula_file -m "${formula_name##*/}: update ${verison}"
+                git commit $formula_file -m "${formula_name##*/}: update ${tag}"
                 git push origin master
             fi
             echo "updated success"
