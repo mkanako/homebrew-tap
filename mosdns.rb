@@ -1,9 +1,9 @@
 class Mosdns < Formula
   desc "一个灵活的 DNS 转发器"
   homepage "https://github.com/IrineSistiana/mosdns"
-  url "https://github.com/IrineSistiana/mosdns/releases/download/v0.22.1/mosdns-darwin-amd64.zip"
-  version "v0.22.1"
-  sha256 "8144cf9dca74471815a2360bed07e22ec5081e1c969fdb14541e84451dae86bd"
+  url "https://github.com/IrineSistiana/mosdns/releases/download/v0.20.0/mosdns-darwin-amd64.zip"
+  version "v0.20.0"
+  sha256 "b9e795e1d0e91306b61b53d3f79e25c83d31d81ee97f94b31810fce791b86ddb"
   license "GPLv3"
 
   bottle :unneeded
