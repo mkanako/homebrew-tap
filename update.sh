@@ -21,7 +21,7 @@ for formula_name in ${formula_names[@]}; do
         exit 1
     fi
     echo "latest verison: ${latest_ver}"
-    current_ver=$(grep -wo $formula_file -e "${latest_ver//[0-9]/\\d\?}" | head -1)
+    current_ver=$(grep -wo $formula_file -e "v\d\{0,\}.\d\{0,\}.\d\{0,\}" | head -1)
     if [ -z "$current_ver" ]; then
         echo "current verison not found"
         exit 1
