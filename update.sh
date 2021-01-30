@@ -15,7 +15,7 @@ done
 for formula_name in ${formula_names[@]}; do
     echo $formula_name
     formula_file="${formula_name##*/}.rb"
-    latest_ver=$(curl -s -f https://api.github.com/repos/"$formula_name"/releases/latest | grep "tag_name" | cut -d '"' -f 4)
+    latest_ver=$(curl -s -f https://api.github.com/repos/"$formula_name"/releases/latest | grep -m 1 "tag_name" | cut -d '"' -f 4)
     if [ -z "$latest_ver" ]; then
         echo "latest verison not found"
         exit 1
