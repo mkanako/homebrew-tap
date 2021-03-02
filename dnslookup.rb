@@ -1,8 +1,8 @@
 class Dnslookup < Formula
   desc "Simple command line utility to make DNS lookups to the specified server"
   homepage "https://github.com/ameshkov/dnslookup"
-  url "https://github.com/ameshkov/dnslookup/releases/download/v1.4.6/dnslookup-darwin-amd64-v1.4.6.tar.gz"
-  sha256 "216453c102aeaf606497048e0475fa6f8fbee9a777ee32998204d2aa2d170f34"
+  url "https://github.com/ameshkov/dnslookup/releases/download/v1.4.7/dnslookup-darwin-amd64-v1.4.7.tar.gz"
+  sha256 "d9e2c1cfe4be7db3eb472e006e8e97963a883d450040ee629d487328cec17ce7"
   license "GPLv3"
 
   bottle :unneeded
