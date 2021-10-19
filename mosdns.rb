@@ -6,8 +6,6 @@ class Mosdns < Formula
   sha256 "b2712763b3d90672b9f7f64526480f1a9384c9302111adcb1f5170561a2feb6e"
   license "GPLv3"
 
-  bottle :unneeded
-
   def install
     bin.install "mosdns"
   end

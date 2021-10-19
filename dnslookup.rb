@@ -5,8 +5,6 @@ class Dnslookup < Formula
   sha256 "800ea7f347aae8990edda998244c9daa05a1e0cf8157d4993aea50c7344fd2c3"
   license "GPLv3"
 
-  bottle :unneeded
-
   def install
     bin.install "dnslookup"
   end
