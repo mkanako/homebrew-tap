@@ -31,7 +31,7 @@ class Mosdns < Formula
           <array>
             <string>#{opt_bin}/mosdns</string>
             <string>start</string>
-            <string>-dir</string>
+            <string>-d</string>
             <string>#{etc}/mosdns</string>
             <string>-c</string>
             <string>#{etc}/mosdns/mosdns.yaml</string>
