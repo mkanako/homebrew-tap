@@ -30,6 +30,7 @@ class Mosdns < Formula
           <key>ProgramArguments</key>
           <array>
             <string>#{opt_bin}/mosdns</string>
+            <string>start</string>
             <string>-dir</string>
             <string>#{etc}/mosdns</string>
             <string>-c</string>
